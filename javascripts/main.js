@@ -1,0 +1,1 @@
+console.log('%cコンソールみても面白いことないよ', 'color: red;font-weight: bold;font-size: 15px');
