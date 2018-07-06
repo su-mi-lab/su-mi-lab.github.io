@@ -100,10 +100,30 @@
 <script type="text/javascript" src="../javascripts/main.js"></script>
 
 <script>
-  // while (ga !== undefined) {
-  //   console.log(1);
-  //   ga("gtm1.send", "Custom", "pageview", "カスタムイベント", "Custom/id/id");
-  // }
+
+  time = 0;
+  timerID = 0;
+
+  StartTimer = function() {
+    timerID = setInterval(Timer/*定期的に呼び出す関数名*/, 1000/*呼び出す間隔*/);
+  };
+
+  StopTimer = function() {
+    clearInterval(timerID);
+  };
+
+  Timer = function() {
+    time = time + 1;
+    console.log(time);
+    if (ga !== undefined) {
+      StopTimer();
+      // ga("gtm1.send", "event", "view", "Aさん", "id");
+      // ga("gtm1.send", "event", "view", "Bさん", "id");
+      // ga("gtm1.send", "event", "view", "Cさん", "id");
+    }
+  };
+
+  StartTimer();
 </script>
 
 </body>
