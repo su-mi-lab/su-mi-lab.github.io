@@ -100,7 +100,7 @@
 <script type="text/javascript" src="../javascripts/main.js"></script>
 
 <script>
-  while ('ga' in window) {
+  while (ga !== undefined) {
     console.log(1);
     ga("gtm1.send", "Custom", "pageview", "カスタムイベント", "Custom/id/id");
   }
